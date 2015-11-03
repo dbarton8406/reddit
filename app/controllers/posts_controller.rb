@@ -7,8 +7,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    #@posts = Post.all.page(params[:page]).per(10)
-   @posts = Post.page(params[:page]).per(10)
+   @posts = Post.page(params[:page]).per(10).order(:cached_votes_up => :desc)
      render :index
   end
 

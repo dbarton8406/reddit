@@ -1,4 +1,3 @@
-<link rel="stylesheet" href="main.css">
 <h2>Fuhgeddit</h2>
 <% @posts.each do |post| %>
 <ul class="posts">
@@ -7,7 +6,7 @@
 		<%= link_to post.title, post_path(post) %>
 	</li>
 	<li>
-		<%= link_to "#{post.comments.count} comments", post_path(post) %>
+		<%= link_to "#{post.comments.count} comments", post_path(post) %> submitted <%= time_ago_in_words(post.created_at) %> ago by <%post.user_id %>
 	</li>
 	
 	<div>

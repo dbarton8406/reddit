@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="main.css">
+
 <h2><%= @post.title %></h2>
 <h4>Created at: <%= @post.created_at %></h4>
 <div class="post-body">
@@ -23,7 +23,7 @@
 <div class="comments">
     <% @post.comments.each do |comment| %>
     <div class="comment">
-        <em>Written: <%= time_ago_in_words(comment.created_at) %> ago</em><br/>
+        <p>Written: <%= time_ago_in_words(comment.created_at) %> ago</p><br/>
         <%= simple_format(comment.content) %>
       <% if session[:user_id] == @post.user_id %>
         <%= link_to "Delete this comment", comments_path(comment), method: :delete %>
