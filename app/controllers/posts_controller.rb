@@ -7,8 +7,9 @@ class PostsController < ApplicationController
   end
 
   def index
-   @posts = Post.page(params[:page]).per(10).order(:cached_votes_up => :desc)
-     render :index
+    @posts = Post.page(params[:page]).per(10)
+    .order(:cached_votes_up || :cached_votes_down  => :desc)
+    render :index
   end
 
   def create
@@ -52,15 +53,16 @@ class PostsController < ApplicationController
 
   def upvote
     @post = Post.find(params[:id])
-    @post.upvote_by current_user
-    redirect_to posts_path
+      @post.upvote_by current_user
+      redirect_to posts_path
+    end
+
+    def downvote
+      @post = Post.find(params[:id])
+        @post.downvote_by current_user
+        redirect_to posts_path
+    end
   end
 
-  def downvote
-    @post = Post.find(params[:id])
-    @post.downvote_by current_user
-    redirect_to posts_path
-  end
 
 
-end

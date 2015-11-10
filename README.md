@@ -1,3 +1,7 @@
+[![Build Status](https://travis-ci.org/dbarton8406/reddit.svg?branch=master)](http://travis-ci.org/dbarton8406/reddit)
+
+
+
 #Set up the routes first
 
 
