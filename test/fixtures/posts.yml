@@ -1,11 +1,11 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  title: 
-  url: 
-  user_id: 1
+# one:
+#   title: Test_title
+#   url: Test@title.com
+#   user_id: 1
 
-two:
-  title: 
-  url: 
-  user_id: 1
+# two:
+#   title: 
+#   url: 
+#   user_id: 1
