@@ -1,17 +1,11 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# users(:one)
-# users(:two)
-
-
-one:
+Daniel:
   first_name: Daniel
   last_name:  Barton
   email: dbarton@gmail.com
-  password_digest: password
+  password_digest: passwordpass
 
-# two:
-#   first_name: 
-#   last_name: 
-#   email: 
-#   password: MyString
+Sepehr:
+  first_name: Sepehr		
+  last_name: Vakili
+  email: sdvakili@gmail.com
+  password: cookiesnom
