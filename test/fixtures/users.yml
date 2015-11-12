@@ -4,8 +4,8 @@ Daniel:
   email: dbarton@gmail.com
   password_digest: passwordpass
 
-Sepehr:
-  first_name: Sepehr		
-  last_name: Vakili
-  email: sdvakili@gmail.com
-  password: cookiesnom
+# Sepehr:
+#   first_name: Sepehr		
+#   last_name: Vakili
+#   email: sdvakili@gmail.com
+#   password_digest: cookiesnom

@@ -18,29 +18,27 @@ class UserTest < ActiveSupport::TestCase
   test "should save user with first_name" do
     user = users(:Daniel)
 
-    refute user.save
-    assert user.errors[:first_name].present?
+    assert user.save, "should save"
   end
 
   test "should save user with last_name" do
     user = users(:Daniel)
 
-    refute user.save
-    assert user.errors[:last_name].present?
+    assert user.save, "should save" 
   end
 
-  test "users should have a password" do
+  test "users should have a password_digest" do
     user = users(:Daniel)
-    user.password = nil
+    user.password_digest= nil
 
     refute user.save
-    assert user.errors[:password].present?
+    assert user.errors[:password_digest].present?
   end
-  test "users password should have a length of 10" do
+  test "users password_digest cannot be less than 10 characters" do
     user = users(:Daniel)
-    user.password = nil
+    user.password_digest = "hello"
 
-    refute user.save
-    assert user.password.count >= 10
+    refute user.save, "User saved."
+    assert user.errors[:password_digest].present?, "No errors for password_digest digest."
   end
 end
