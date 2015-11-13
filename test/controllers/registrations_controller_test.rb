@@ -10,7 +10,6 @@ class RegistrationsControllerTest < ActionController::TestCase
   end
   test "should create user" do
     assert_difference('User.count') do
-      binding.pry
       post :create, user: {first_name: "John", last_name: "Smith", email: "Rickard@prez2020.com", password_digest: "cookiesnom" }
       assert_redirected_to posts_path
     end
