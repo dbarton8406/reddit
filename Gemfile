@@ -22,7 +22,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Kaminari for pagination.
 gem "kaminari"
 #Devise is a flexible authentication solution for Rails based on Warden
-gem 'devise', '~> 3.0.0'
+gem 'devise', '~> 3.4.0'
 
 # Use ActiveModel has_secure_password
 #gem 'bcrypt', '~> 3.1.7'
