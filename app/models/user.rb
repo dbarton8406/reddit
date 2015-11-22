@@ -2,8 +2,7 @@ class User < ActiveRecord::Base
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
-  devise :database_authenticatable, :registerable,
-    :recoverable, :rememberable, :trackable, :validatable, :lockable
+  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :trackable, :validatable, :confirmable, :lockable
   # has_secure_password
   has_many :posts
   acts_as_voter
@@ -12,4 +11,4 @@ class User < ActiveRecord::Base
   # validates_format_of :email, with:/.+@.+\..+/
   validates_presence_of :first_name, :last_name
 end
-  
+

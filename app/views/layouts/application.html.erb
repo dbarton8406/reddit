@@ -13,10 +13,10 @@
       <% end %>
       <% if current_user %>
           <h3>Welcome to Fuhgeddit, <%= current_user.first_name %>!</h3>
-          <%= link_to "Logout", login_path, method: "delete" %>
+          <%= link_to "Sign In", user_session_path, method: "delete" %>
       <% else %>
-          <%= link_to "Login", login_path %>
-          <%= link_to "Sign Up", signup_path %>
+          <%= link_to "Login", new_user_session_path %>
+          <%= link_to "Sign Up", new_user_registration_path %>
       <% end %>
   </nav>
 <%= yield %>
