@@ -23,7 +23,7 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 gem "kaminari"
 
 # Use ActiveModel has_secure_password
-gem 'bcrypt', '~> 3.1.7'
+# gem 'bcrypt', '~> 3.1.7'
 # Use acts_as_votable for voting up and down
 gem 'acts_as_votable'
 # Use Unicorn as the app server
