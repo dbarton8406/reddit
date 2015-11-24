@@ -7,8 +7,8 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.page(params[:page]).per(10)
-    .order(:cached_votes_up -  :cached_votes_down  => :desc)
+    @posts = Post.page(params[:page]).per(3)
+    # .order(:cached_votes_up -  :cached_votes_down  => :desc)
     render :index
   end
 
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
       url: params[:url],
       updated_at: DateTime.now
     )
-    redirect_to post_path(post)
+    redirect_to post_new(post)
   end
 
   def destroy

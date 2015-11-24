@@ -1,5 +1,5 @@
 <h1>Join Here</h1>
-<%= form_tag(signup_path) do %>
+<%= form_tag( new_user_registration) do %>
 	<% if @user.errors.any? %>
 		<div class="form-errors">
 			<h2><%= pluralize(@user.errors.count, "error") %> prohibited your user from being saved:</h2>
@@ -31,4 +31,4 @@
 	<%= submit_tag "Sign Up" %>
 <% end %>
 <br>
-<%= link_to "readit now fugedit", posts_path %>
+<%= link_to "readit now Fuhgeddit", posts_path %>
