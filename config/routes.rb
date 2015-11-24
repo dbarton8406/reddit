@@ -1,10 +1,12 @@
 Rails.application.routes.draw do
-  devise_for :users
+  
+ 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root to: "posts#index"
 
   ##Registrations Routes
 
@@ -16,10 +18,9 @@ Rails.application.routes.draw do
   # get "login", to: "session#new"
   # post "login", to: "session#create"
   # delete "login", to: "session#destroy"
-
   ##Posts Routes
-  
-  root to: "posts#index"
+
+  devise_for :users
   get "posts", to: "posts#index"
   get "posts/new", to: "posts#new"
   post "posts", to: "posts#create"
@@ -40,7 +41,7 @@ Rails.application.routes.draw do
   # Example resource route (maps HTTP verbs to controller actions automatically):
   #   resources :products
 
-  # Example resource route with options:
+  # Voting Routes
   resources :posts do
     member do
       put "like", to: "posts#upvote"

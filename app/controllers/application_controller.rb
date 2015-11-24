@@ -1,5 +1,3 @@
-require 'devise'
-
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -11,7 +9,7 @@ class ApplicationController < ActionController::Base
   protected
 
   def configure_permitted_parameters
-    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password) }
+    devise_parameter_sanitizer.for(:sign_up) { |u| u.permit(:first_name, :last_name, :email, :password, :password_confirmation) }
   end
 end
 # user_signed_in?
@@ -29,4 +27,4 @@ end
 #       flash[:notice] = "You have to be logged in to do that."
 #       redirect_to login_path
 #     end
-#   end
+
