@@ -5,11 +5,10 @@
 		<title> Fuhgeddit</title>
 		<link rel= "stylesheet" href= "css/bootstrap.min.css">
 		<head>
-			<h2>Fuhgeddit</h2>
+			<h2><span style="color:white">Fuhgeddit</span></h2>
 			<% @posts.each do |post| %>
 		</head>
 		<body>
-			
 			<ul class="posts">
 				
 				<li class="post">
@@ -23,14 +22,14 @@
 					<%= link_to "Visit Post", post.url %>
 				</div>
 				<div class="upvote">
-					<%= link_to "UpVote",  like_post_path(post), method: :put %>
+				<%= link_to content_tag(:span, "", class: "glyphicon glyphicon-chevron-up"), like_post_path(post), class: "btn btn-success", type: "button" %>
 					<!-- <%= post.get_upvotes.size %> -->
 				</div>
 				<div class="score">
 					<%= post.score %>
 				</div>
 				<div class="downvote">
-					<%= link_to "Downvote", dislike_post_path(post), method: :put  %>
+					<%= link_to content_tag(:span, "", class: "glyphicon glyphicon-chevron-down"), like_post_path(post), class: "btn btn-success", type: "button" %>
 					<!-- <%= post.get_downvotes.size%> -->
 				</div>
 			</ul>

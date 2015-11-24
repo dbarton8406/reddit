@@ -1,25 +1,57 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Reddit</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-  <nav>
-      <% if flash[:notice] %>
-          <h2><div class="notice"><%= flash[:notice] %></div></h2>
-      <% end %>
-      <% if current_user %>
-          <h3>Welcome to Fuhgeddit, <%= current_user.first_name %>!</h3>
-          <%= link_to "Logout", login_path, method: "delete" %>
-      <% else %>
-          <%= link_to "Login", login_path %>
-          <%= link_to "Sign Up", signup_path %>
-      <% end %>
-  </nav>
-<%= yield %>
-
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport", content="width=device-width, initial-scale=1" >
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+    <nav class="navbar navbar-inverse">
+      <title>Fuhgeddit</title>
+      <link rel="stylesheet" type="text/css" href="
+        https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      </head>
+      <body>
+        <div class="container">
+          <div class="masthead">
+            <%= render 'layouts/user_header' %>
+            <h3 class="muted"><%= link_to "Fuhgeddit", root_path %></h3>
+            <h5 class="muted">A ridiculous version of Reddit</h5>
+          </div>
+        </nav>
+        <hr />
+        <div class="jumbotron text-center">
+          <% if flash[:notice] %>
+          <h2><div class="alert"><%= flash[:notice] %></div></h2>
+          <% end %>
+          <% if flash[:alert] %>
+          <p class="alert"><%= flash[:alert] %></p>
+          <% end %>
+          <% if current_user %>
+          <h3>Welcome back to Fuhgeddit!, <%= current_user.first_name %>!</h3>
+          <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+          <% else %>
+          <h1>Welcome, Back!</h1>
+          <p class="lead">
+            You must sign in or sign up before you can access content.
+          </p>
+          <div class="row-fluid">
+            <div class="span6">
+              <%= link_to content_tag(:span, "Sign In", class: "glyphicon glyphicon-user"), new_user_session_path, class: "btn btn-info", type: "button" %>
+              &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
+              <%= link_to content_tag(:span, "Sign Up", class: "glyphicon glyphicon-plus"), new_user_registration_path, class: "btn btn-success" %>
+            </div>
+          </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <%= yield %>
 </body>
 </html>

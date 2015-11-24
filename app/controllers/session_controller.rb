@@ -5,7 +5,7 @@ class SessionController < ApplicationController
 
   def create
     user = User.find_by!(email: params[:email])
-    if user.authenticate(params[:password_digest])
+    if user.authenticate(params[:password_encryption])
       session[:user_id] = user.id
       redirect_to posts_path
     else

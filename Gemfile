@@ -21,9 +21,13 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use Kaminari for pagination.
 gem "kaminari"
+#Devise is a flexible authentication solution for Rails based on Warden
+gem 'devise', '~> 3.4.0'
 
 # Use ActiveModel has_secure_password
+
 # gem 'bcrypt', '~> 3.1.7'
+
 # Use acts_as_votable for voting up and down
 gem 'acts_as_votable'
 # Use Unicorn as the app server
