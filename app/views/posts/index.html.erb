@@ -22,14 +22,14 @@
 					<%= link_to "Visit Post", post.url %>
 				</div>
 				<div class="upvote">
-				<%= link_to content_tag(:span, "", class: "glyphicon glyphicon-chevron-up"), like_post_path(post), class: "btn btn-success", type: "button" %>
+				<%= link_to content_tag(:span, "", class: "glyphicon glyphicon-chevron-up"), like_post_path(post), method: :put, class: "btn btn-success", type: "button" %>
 					<!-- <%= post.get_upvotes.size %> -->
 				</div>
 				<div class="score">
 					<%= post.score %>
 				</div>
 				<div class="downvote">
-					<%= link_to content_tag(:span, "", class: "glyphicon glyphicon-chevron-down"), like_post_path(post), class: "btn btn-success", type: "button" %>
+					<%= link_to content_tag(:span, "", class: "glyphicon glyphicon-chevron-down"), dislike_post_path(post),method: :put, class: "btn btn-success", type: "button" %>
 					<!-- <%= post.get_downvotes.size%> -->
 				</div>
 			</ul>
