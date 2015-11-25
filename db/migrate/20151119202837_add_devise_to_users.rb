@@ -2,8 +2,6 @@ class AddDeviseToUsers < ActiveRecord::Migration
   def self.up
     change_table(:users) do |t|
       ## Database authenticatable
-      t.remove :password_digest 
-      t.remove :password_digest_digest
       t.string :encrypted_password, :null => false, :default => ""
 
       ## Recoverable
