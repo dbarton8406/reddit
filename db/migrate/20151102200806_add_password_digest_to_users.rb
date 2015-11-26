@@ -6,3 +6,4 @@ class AddPasswordDigestToUsers < ActiveRecord::Migration
       u.save!
     end
   end
+end
