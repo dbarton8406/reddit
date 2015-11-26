@@ -15,7 +15,7 @@
         <div class="container">
           <div class="masthead">
             <%= render 'layouts/user_header' %>
-            <h3 class="muted"><%= link_to "Fuhgeddit", root_path %></h3>
+            <h3 class="muted_title"><img src="" alt="" style="width:50px;height:50px;"><a class="fud">Fuhgeddit</h3></a>
             <h5 class="muted">A ridiculous version of Reddit</h5>
           </div>
         </nav>
@@ -25,21 +25,21 @@
           <h2><div class="alert"><%= flash[:notice] %></div></h2>
           <% end %>
           <% if flash[:alert] %>
-          <p class="alert"><%= flash[:alert] %></p>
+          <b class="alert"><%= flash[:alert] %></b>
           <% end %>
           <% if current_user %>
-          <h3>Welcome back to Fuhgeddit!, <%= current_user.first_name %>!</h3>
-          <%= link_to "Sign Out", destroy_user_session_path, :method => :delete, :class => 'btn btn-large btn-danger' %>
+          <h3><span style="color:white">Welcome back to Fuhgeddit!, <%= current_user.first_name %>!</span></h3>
+          <%= link_to content_tag(:span, "Sign Out", class: "glyphicon glyphicon-off"), destroy_user_session_path, :method => :delete, class: "btn btn-sm btn-danger", type: "button" %>
           <% else %>
-          <h1>Welcome, Back!</h1>
-          <p class="lead">
+          <h1><span style="color:white">Welcome, Back!</span></h1>
+          <b class="lead">
             You must sign in or sign up before you can access content.
-          </p>
+          </b>
           <div class="row-fluid">
             <div class="span6">
               <%= link_to content_tag(:span, "Sign In", class: "glyphicon glyphicon-user"), new_user_session_path, class: "btn btn-info", type: "button" %>
               &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp
-              <%= link_to content_tag(:span, "Sign Up", class: "glyphicon glyphicon-plus"), new_user_registration_path, class: "btn btn-success" %>
+              <%= link_to content_tag(:span, "Sign Up", class: "glyphicon glyphicon-plus"), new_user_registration_path, class: "btn btn-success", type: "button" %>
             </div>
           </div>
           <% end %>

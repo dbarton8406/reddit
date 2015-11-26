@@ -15,7 +15,7 @@
 					<%= link_to post.title, post_path(post) %>
 				</li>
 				<li>
-					<%= link_to "#{post.comments.count} comments", post_path(post) %> submitted <%= time_ago_in_words(post.created_at) %> ago by <%post.user_id %>
+					<%= link_to "#{post.comments.count} comments", post_path(post) %> submitted <span style="color:chocolate"><%= time_ago_in_words(post.created_at) %> ago by <%post.user_id %></span>
 				</li>
 				
 				<div>

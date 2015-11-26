@@ -1,34 +1,36 @@
-
-<h2><%= @post.title %></h2>
-<h4>Created at: <%= @post.created_at %></h4>
+<h2><span style="color:white"><%= @post.title %></span></h2>
+<h4><span style="color:#4E7718">Created at:</span><span style="color:chocolate"> <%= @post.created_at %></span></h4>
 <div class="post-body">
     <%= simple_format(@post.url) %>
 </div>
 <%= link_to "Posts Index", posts_path %>
 <% if session[:user_id] == @post.user_id %>
-    <%= link_to "Edit this Post", post_edit_path(@post) %>
-    <%= link_to "Delete this Post", post_path(@post), method: :delete %>
+<%= link_to "Edit this Post", post_edit_path(@post) %>
+<%= link_to "Delete this Post", post_path(@post), method: :delete %>
 <% end %>
 <div class="comment-form">
-    <h3>Add a Comment</h3>
+    <h3><span style="color:white">Add a Comment</span></h3>
     <%= form_tag(comments_path(@post)) do %>
     <div class="comment-field">
         <%= label_tag " " %>
         <%= text_area_tag :content, nil, cols: 40, rows: 5 %>
     </div>
-    <%= submit_tag "Submit Comment" %>
+    <%= button_tag(type: 'submit', class: "btn btn-primary") do %>
+    <span class="glyphicon glyphicon-ok"></span>
+    <% end %>
     <% end %>
 </div>
-<h2>Comments:</h2>
+<h4><span style="color:white">Comments:</span></h4>
 <div class="comments">
     <% @post.comments.each do |comment| %>
     <div class="comment">
-        <p>Written: <%= time_ago_in_words(comment.created_at) %> ago</p><br/>
+        <span style="color:#4E7718"<p>Written:</span> <span style="color:chocolate"><%= time_ago_in_words(comment.created_at) %> ago</span></p><br/>
         <%= simple_format(comment.content) %>
-      <% if session[:user_id] == @post.user_id %>
-        <%= link_to "Delete this comment", comments_path(comment), method: :delete %>
-      <% end %>
-      Comment by: <%= User.find(comment.user_id).first_name %>
+        <% if comment[:user_id] == @post.user_id %>
+        <%= link_to "Delete this comment", comments_path(comment), method: :delete %><br>
+        <%= link_to "Edit this comment", comments_path(comment), method: :get %><br>
+        <% end %>
+        Comment by: <span style="color:white"><%= User.find(comment.user_id).first_name %></span>
     </div>
     <br>
     <% end %>

@@ -80,3 +80,98 @@ color: #FFFFFF;
 .post-nav a{
 color: #FFFFFF;
 }
+* {
+color:#4E7718;
+text-shadow: 2px 2px 1px #888888;
+}
+p{
+background-image: image-url('post.jpeg');
+background-repeat: no-repeat;
+background-size: 100%;
+color:white;
+}
+.glyphicon {
+color: white;
+}
+b{
+color: white;
+-webkit-text-stroke: 1px black;
+color: white;
+text-shadow:
+3px 3px 0 #000,
+-1px -1px 0 #000,
+1px -1px 0 #000,
+-1px 1px 0 #000,
+1px 1px 0 #000;
+}
+img{
+padding-bottom: 100;
+background-image: image-url('images.jpg');
+background-repeat: no-repeat;
+background-size: 100%;
+}
+.masthead{
+border: 1px solid white;
+background-image: image-url('flame2.jpg');
+background-repeat: no-repeat;
+background-size: 100%;
+background-color: white;
+}
+ol{
+background-color: black;
+opacity: 100;
+}
+a.btn {
+border-radius: 8px;
+box-shadow: 3px 3px 1px #888888;
+cursor: pointer;
+}
+
+
+
+
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+
+body{
+ background:url('http://subtlepatterns.subtlepatterns.netdna-cdn.com/patterns/noisy_net.png') repeat;
+  font-family: "Open Sans",  Impact;
+}
+a.fud{
+position: relative;
+    top: 18px;
+  text-align:center;
+  font-size:2.7em;
+  color:#fff;
+  letter-spacing: -7px;
+  font-weight:40;
+  text-transform:uppercase;
+  animation:blur .85s ease-out infinite;
+  text-shadow:0px 0px 5px #fff,
+      0px 0px 7px #fff;
+}
+
+@keyframes blur{
+  from{
+      text-shadow:0px 0px 10px #fff,
+      0px 0px 10px #fff, 
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 25px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #fff,
+      0px 0px 50px #7B96B8,
+      0px 0px 150px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px 10px 100px #7B96B8,
+      0px -10px 100px #7B96B8,
+      0px -10px 100px #7B96B8;}
+}
+
+h3{
+	padding-bottom: 20px;
+}

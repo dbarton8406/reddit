@@ -30,6 +30,7 @@ Rails.application.routes.draw do
   delete "posts/:id", to: "posts#destroy"
 
   post "posts/:id/comment", to: "comments#create", as: "comments"
+  get   "posts/:id/comment", to: "comments#edit"
   delete "posts/:id/comment", to: "comments#destroy"
 
   # Example of regular route:
