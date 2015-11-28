@@ -1,5 +1,5 @@
 class AddCachedVotesToPosts < ActiveRecord::Migration
-	def self.up
+	def up
     add_column :posts, :cached_votes_total, :integer, :default => 0
     add_column :posts, :cached_votes_score, :integer, :default => 0
     add_column :posts, :cached_votes_up, :integer, :default => 0
