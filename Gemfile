@@ -28,6 +28,7 @@ gem 'devise', '~> 3.4.0'
 
 gem 'bcrypt', '~> 3.1.7'
 
+gem 'acts_as_votable-on'
 # Use acts_as_votable for voting up and down
 gem 'acts_as_votable'
 # Use Unicorn as the app server
