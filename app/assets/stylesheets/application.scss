@@ -126,50 +126,64 @@ border-radius: 8px;
 box-shadow: 3px 3px 1px #888888;
 cursor: pointer;
 }
-
-
-
-
 @import url(http://fonts.googleapis.com/css?family=Open+Sans);
-
-
-
 a.fud{
+text-decoration: none;
 position: relative;
-    top: 18px;
-  text-align:center;
-  font-size:2.7em;
-  color:#fff;
-  letter-spacing: -7px;
-  font-weight:40;
-  text-transform:uppercase;
-  animation:blur .85s ease-out infinite;
-  text-shadow:0px 0px 5px #fff,
-      0px 0px 7px #fff;
+top: 18px;
+text-align:center;
+font-size:2.7em;
+color:#0E1479;
+letter-spacing: -7px;
+font-weight:40;
+text-transform:uppercase;
+animation:blur .85s ease-out infinite;
+text-shadow:0px 0px 5px #fff,
+0px 0px 7px #fff;
 }
-
+a.fud.hover{
+text-decoration: none;
+position: relative;
+top: 18px;
+text-align:center;
+font-size:2.7em;
+color:#0E1479 ;
+letter-spacing: -7px;
+font-weight:40;
+text-transform:uppercase;
+animation:blur .85s ease-out infinite;
+text-shadow:0px 0px 5px #fff,
+0px 0px 7px #fff;
+}
 @keyframes blur{
-  from{
-      text-shadow:0px 0px 10px #fff,
-      0px 0px 10px #fff, 
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 25px #fff,
-      0px 0px 50px #fff,
-      0px 0px 50px #fff,
-      0px 0px 50px #7B96B8,
-      0px 0px 150px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px 10px 100px #7B96B8,
-      0px -10px 100px #7B96B8,
-      0px -10px 100px #7B96B8;}
+from{
+text-shadow:0px 0px 10px #fff,
+0px 0px 10px #fff,
+0px 0px 25px #fff,
+0px 0px 25px #fff,
+0px 0px 25px #fff,
+0px 0px 25px #fff,
+0px 0px 25px #fff,
+0px 0px 25px #fff,
+0px 0px 50px #fff,
+0px 0px 50px #fff,
+0px 0px 50px #7B96B8,
+0px 0px 150px #7B96B8,
+0px 10px 100px #7B96B8,
+0px 10px 100px #7B96B8,
+0px 10px 100px #7B96B8,
+0px 10px 100px #7B96B8,
+0px -10px 100px #7B96B8,
+0px -10px 100px #7B96B8;}
 }
-
 h3{
-	padding-bottom: 20px;
+text-decoration: none;
+padding-bottom: 20px;
+}
+input.query{
+width: 688px;
+height: 23px;
+position: relative;
+top: -5px;
+font-size: 13px;
 }

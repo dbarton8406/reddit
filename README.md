@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/dbarton8406/reddit.svg?branch=master)](http://travis-ci.org/dbarton8406/reddit)
 
-
+# A reddit style clone you can make a post with a url, make comments , vote.
 
 #Set up the routes first
 
@@ -89,3 +89,5 @@ Associations:
 ##Comments Routes
 
 - post "posts/:id/comments", to: "comments#create", as "comments"
+
+##gems: Rails, ActiveRecord, Devise, Bullet, Kaminari, and Puma.  Experimented with Bootstrap CSS framework for styling.
