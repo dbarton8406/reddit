@@ -1,3 +1,3 @@
 class AddCachedVotesToPosts < ActiveRecord::Base
-belongs to :post
+  belongs_to :post
 end
