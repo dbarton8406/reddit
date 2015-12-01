@@ -3,12 +3,13 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
+    @posts = nil
     render :new
   end
 
   def index
-    @post = Post.page(params[:page]).per(3),
-    @post=Post.order(:cached_votes_score  => :desc)
+    @posts= Post.page(params[:page]).per(3)
+    @post= Post.order(:cached_votes_score  => :desc)
     render :index
   end
 
