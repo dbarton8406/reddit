@@ -14,11 +14,29 @@ class PostsController < ApplicationController
   end
 
   def create
-    post = current_user.posts.create(
-      title: params[:title],
-      url: if params[:url].start_with?('http://', 'https://') then params[:url] else params[:url].prepend('http://') end
-    )
-    redirect_to post_path(post)
+    @user = current_user
+    @post = current_user.posts.create(title: params[:title], url: buildURL(params))
+
+    # @post = current_user.posts.create(
+    #   title: params[:title],
+    #   url: if params[:url].start_with?('http://', 'https://') then
+    #         params[:url]
+    #       else
+    #         params[:url].prepend('http://')
+    #       end
+    #       )
+    # PostMailer.whocares()
+    PostMailer.post_created(@user).deliver_now
+
+    redirect_to post_path(@post)
+  end
+
+  def buildURL(params)
+    if params[:url].start_with?('http://', 'https://')
+      params[:url]
+    else
+      params[:url].prepend('http://')
+    end
   end
 
   def edit
