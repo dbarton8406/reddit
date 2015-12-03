@@ -17,15 +17,6 @@ class PostsController < ApplicationController
     @user = current_user
     @post = current_user.posts.create(title: params[:title], url: buildURL(params))
 
-    # @post = current_user.posts.create(
-    #   title: params[:title],
-    #   url: if params[:url].start_with?('http://', 'https://') then
-    #         params[:url]
-    #       else
-    #         params[:url].prepend('http://')
-    #       end
-    #       )
-    # PostMailer.whocares()
     PostMailer.post_created(@user).deliver_now
 
     redirect_to post_path(@post)
